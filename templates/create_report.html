@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>Crear Reporte</title></head>
+<body>
+  <h1>Nuevo Reporte para {{ client.name }}</h1>
+  <form method="post">
+    Título: <input type="text" name="title" required><br>
+    Contenido:<br>
+    <textarea name="content" rows="10" cols="50" required></textarea><br>
+    <button type="submit">Generar y Enviar</button>
+  </form>
+</body>
+</html>

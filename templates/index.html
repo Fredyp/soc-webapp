@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head><title>Clientes SOC</title></head>
+<body>
+  <h1>Clientes</h1>
+  <form action="/create_client" method="post">
+    Nombre: <input type="text" name="name" required>
+    Correo: <input type="email" name="email" required>
+    <button type="submit">Crear Cliente</button>
+  </form>
+  <ul>
+    {% for client in clients %}
+      <li>
+        {{ client.name }} - {{ client.email }}
+        [<a href="{{ url_for('create_report', client_id=client.id) }}">Nuevo Informe</a>]
+        [<a href="{{ url_for('report_log', client_id=client.id) }}">Ver Historial</a>]
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>

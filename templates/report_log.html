@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>Historial de Reportes</title></head>
+<body>
+  <h1>Historial de reportes para {{ client.name }}</h1>
+  <ul>
+    {% for report in reports %}
+      <li>{{ report.timestamp.strftime('%Y-%m-%d %H:%M:%S') }} - {{ report.title }}</li>
+    {% endfor %}
+  </ul>
+  <a href="/">Volver</a>
+</body>
+</html>
